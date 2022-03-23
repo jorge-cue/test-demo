@@ -9,7 +9,7 @@ public abstract class AbstractPizza {
 
     private final Set<Topping> toppings;
 
-    abstract static class Builder<T extends Builder<T>> {
+    protected abstract static class Builder<T extends Builder<T>> {
 
         EnumSet<Topping> toppings = EnumSet.noneOf(Topping.class);
 
@@ -25,9 +25,13 @@ public abstract class AbstractPizza {
 
     protected AbstractPizza(Builder<?> builder) {
         toppings = builder.toppings;
+        // TODO: fix immutability problem, solution bellow:
+        // toppings = EnumSet.copyOf(builder.toppings);
     }
 
     public final Set<Topping> getToppings() {
         return toppings;
+        // TODO: fix immutability problem, solution bellow:
+        // return EnumSet.copyOf(toppings);
     }
 }
