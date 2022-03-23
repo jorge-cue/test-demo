@@ -1,6 +1,5 @@
 package mx.jhcue.testsdemo.model;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;
@@ -38,7 +37,6 @@ class CalzoneTest {
     @Test
     void backedCalzoneIsImmutableByBuilder() {
         Calzone.Builder builder = new Calzone.Builder();
-
 
         Calzone calzone = builder.addTopping(MUSHROOM).sauceInside().build();
         builder.addTopping(PEPPER);

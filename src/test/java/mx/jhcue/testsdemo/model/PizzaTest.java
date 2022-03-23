@@ -11,6 +11,7 @@ import static mx.jhcue.testsdemo.model.AbstractPizza.Topping.PEPPER;
 import static mx.jhcue.testsdemo.model.AbstractPizza.Topping.SAUSAGE;
 import static mx.jhcue.testsdemo.model.Pizza.Size.LARGE;
 import static mx.jhcue.testsdemo.model.Pizza.Size.MEDIUM;
+import static mx.jhcue.testsdemo.model.Pizza.Size.SMALL;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -52,8 +53,8 @@ class PizzaTest {
     }
 
     @Test
-    void backedCalzoneIsImmutableByBuilder() {
-        Pizza.Builder builder = new Pizza.Builder(LARGE);
+    void backedPizzaIsImmutableByBuilder() {
+        Pizza.Builder builder = new Pizza.Builder(SMALL);
 
         Pizza pizza = builder.addTopping(MUSHROOM).build();
         builder.addTopping(PEPPER);
